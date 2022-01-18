@@ -58,6 +58,7 @@ class ModuleSwitchController extends Controller
         if ($duplicateErrStatus == 1) {
             return response()->json(['Error' =>  "Module and team code does not match!"],  400);
         }
+        return response()->json(["Message"=>"Success!"], 200);
     }
     public function SaveTeamCodeAndModuleToDB(Request $request) {
         $isExist = ModuleSwitch::where('module','=', $request->module)->first();
