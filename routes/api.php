@@ -8,6 +8,7 @@ use App\Http\Controllers\ScreenConfigController;
 use App\Http\Controllers\PaymentConfigController;
 use App\Http\Controllers\NotificationConfigController;
 use App\Http\Controllers\LoginConfigController;
+use App\Http\Controllers\ModuleSwitchController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -40,3 +41,6 @@ Route::post('/paymentConfig/set', [PaymentConfigController::class, 'SetPaymentCo
 
 Route::get('/notificationConfig/get', [NotificationConfigController::class, 'GetNotificationConfig']);
 Route::post('/notificationConfig/set', [NotificationConfigController::class, 'SetNotificationConfig']);
+
+Route::get('/moduleSwitch/get', [ModuleSwitchController::class, 'GetTeamCodeFromModule']);
+Route::post('/moduleSwitch/set', [ModuleSwitchController::class, 'SetTeamCodeForModule']);

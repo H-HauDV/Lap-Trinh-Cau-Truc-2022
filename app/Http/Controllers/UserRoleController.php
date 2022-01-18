@@ -9,7 +9,7 @@ class UserRoleController extends Controller
     public function GetUserRoleFromID(Request $request){
         $users = UserRole::where('id','=', $request->id)->get();
         if (count($users) > 0) return response()->json(["role"=> $users[0]->role],  200);
-        return response()->json(['Error' =>  "User ID does nor exist!"],  400);
+        return response()->json(['Error' =>  "User ID does not exist!"],  400);
     }
     public function StoreUserRole(Request $request)
     {
