@@ -43,6 +43,9 @@ php artisan serve
 6. API for get/set login config
 * GET 'api/loginconfig/get'
 * POST 'api/loginconfig/set'
+7. API for get/set module switch
+* GET 'api/moduleSwitch/get'
+* POST 'api/moduleSwitch/set'
 
 ## Database format
 /database/seeders
