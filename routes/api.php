@@ -43,4 +43,4 @@ Route::get('/notificationConfig/get', [NotificationConfigController::class, 'Get
 Route::post('/notificationConfig/set', [NotificationConfigController::class, 'SetNotificationConfig']);
 
 Route::get('/moduleSwitch/get', [ModuleSwitchController::class, 'GetTeamCodeFromModule']);
-Route::post('/moduleSwitch/set', [ModuleSwitchController::class, 'SetTeamCodeForModule']);
+Route::post('/moduleSwitch/set', [ModuleSwitchController::class, 'SaveTeamCodeAndModuleToDB']);
