@@ -11,4 +11,5 @@ use Laravel\Sanctum\HasApiTokens;
 class ModuleSwitch extends Model
 {
     protected $collection = 'ModuleSwitch';
+    public $timestamps = false;
 }
