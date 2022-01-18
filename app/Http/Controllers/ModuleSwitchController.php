@@ -51,7 +51,7 @@ class ModuleSwitchController extends Controller
         }
         return response()->json(['Error' =>  "Module and team code does not match!"],  400);
     }
-    private function SaveTeamCodeAndModuleToDB(Request $request) {
+    public function SaveTeamCodeAndModuleToDB(Request $request) {
         $isExist = ModuleSwitch::where('module','=', $request->module)->first();
         if ($isExist != null) {
             $isExist->module = $request->module;
