@@ -25,27 +25,27 @@ class ModuleSwitchController extends Controller
         switch($request->module) {
             case 0:     // Sản phẩm: 0 (SP_11 và SP_17)
                 if($request->team_code == 'SP_11' || $request->team_code == 'SP_17') {
-                    SaveTeamCodeAndModuleToDB($request);
+                    $this->SaveTeamCodeAndModuleToDB($request);
                 }
                 break;
             case 1:     // Giao hàng: 1 (SP_07 và SP_15)
                 if($request->team_code == 'SP_07' || $request->team_code == 'SP_15') {
-                    SaveTeamCodeAndModuleToDB($request);
+                    $this->SaveTeamCodeAndModuleToDB($request);
                 }
                 break;
             case 2:     // Hậu mãi & CSKH: 2 (SP_06 và SP_21)
                 if($request->team_code == 'SP_06' || $request->team_code == 'SP_21') {
-                    SaveTeamCodeAndModuleToDB($request);
+                    $this->SaveTeamCodeAndModuleToDB($request);
                 }
                 break;
             case 3:     // KH & QL tài khoản: 3 (SP_08 và SP_14)
                 if($request->team_code == 'SP_08' || $request->team_code == 'SP_14') {
-                    SaveTeamCodeAndModuleToDB($request);
+                    $this->SaveTeamCodeAndModuleToDB($request);
                 }
                 break;
             case 4:     // Đơn hàng: 4 (SP_01 và SP_16)
                 if($request->team_code == 'SP_01' || $request->team_code == 'SP_16') {
-                    SaveTeamCodeAndModuleToDB($request);
+                    $this->SaveTeamCodeAndModuleToDB($request);
                 }
                 break;  
         }
