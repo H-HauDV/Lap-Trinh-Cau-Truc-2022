@@ -13,6 +13,7 @@ class UserRoleController extends Controller
     }
     public function GetUserRoleFromIDFunctionWithoutRequest($userId){
         $users = UserRole::where('id','=', $userId)->get();
+        return $users;
         if (count($users) > 0) return response()->json(["role"=> $users[0]->role],  200);
         return response()->json(['Error' =>  "User ID does not exist!"],  400);
     }
