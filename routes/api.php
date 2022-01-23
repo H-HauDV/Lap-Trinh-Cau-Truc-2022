@@ -25,7 +25,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/user/get-role/from-id', [UserRoleController::class, 'GetUserRoleFromID']);
-Route::get('/user/get-role/without-request/from-id/{userId}', [UserRoleController::class, 'GetUserRoleFromIDFunctionWithoutRequest']);
+Route::post('/user/get-role/for-post', [UserRoleController::class, 'GetUserRoleForPost']);
 Route::post('/user/set-role/for-id', [UserRoleController::class, 'StoreUserRole']);
 
 Route::get('/productconfig/get', [ProductConfigController::class, 'GetProductConfigFromID']);
