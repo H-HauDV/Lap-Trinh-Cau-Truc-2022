@@ -11,7 +11,7 @@ class UserRoleController extends Controller
         if (count($users) > 0) return response()->json(["role"=> $users[0]->role],  200);
         return response()->json(['Error' =>  "User ID does not exist!"],  400);
     }
-    public function GetUserRoleFromIDFunctionSupportPostMethod($userId){
+    public function GetUserRoleFromIDFunctionWithoutRequest($userId){
         $users = UserRole::where('id','=', $userId)->get();
         if (count($users) > 0) return response()->json(["role"=> $users[0]->role],  200);
         return response()->json(['Error' =>  "User ID does not exist!"],  400);
