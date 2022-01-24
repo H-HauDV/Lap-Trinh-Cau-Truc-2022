@@ -31,10 +31,10 @@ class ScreenConfigController extends Controller
             return response()->json(["Message" => "Configuration has been updated successfully",  "user_id" => $request->user_id],  200);
         } else {
             $newUser = new ScreenConfig;
-            $isExist->{"user_id"} = $request->{"user_id"};
-            $isExist->theme = $request->theme;
-            $isExist->{"font-size"} = $request->{"font-size"};
-            $isExist->language = $request->language;
+            $newUser->{"user_id"} = $request->{"user_id"};
+            $newUser->theme = $request->theme;
+            $newUser->{"font-size"} = $request->{"font-size"};
+            $newUser->language = $request->language;
             $newUser->save();
             return response()->json(["Message" => "Successfully configured",  "user_id" => $request->user_id],  200);
         }
