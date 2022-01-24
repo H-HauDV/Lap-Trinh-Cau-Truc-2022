@@ -54,7 +54,7 @@ https://ltct-sp03-api.herokuapp.com/ (add this before every api)
 2. API for get payment config
 * POST: 'api/paymentConfig/get/for-post'
 3. API for get notification config
-* POST: '/notificationConfig/get/for-post'
+* POST: 'api/notificationConfig/get/for-post'
 4. API for get screen config
 * POST: 'api/user/get-screen-config/for-post'
 5. API for get product config
