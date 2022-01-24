@@ -23,11 +23,11 @@ php artisan migrate
 ```
 php artisan serve 
 ```
-
+## Base link for api: 
+https://ltct-sp03-api.herokuapp.com/ (add this before every api)
 ## API list:
 1. API for get/set role
 * GET: 'api/user/get-role/from-id'
-* POST: 'api//user/get-role/for-post'
 * POST: 'api/user/set-role/for-id'
 2. API for get/set payment config
 * GET: 'api/paymentConfig/get'
@@ -47,6 +47,25 @@ php artisan serve
 7. API for get/set module switch
 * GET 'api/moduleSwitch/get'
 * POST 'api/moduleSwitch/set'
+
+## If you use can't use get with request body use this instead (get but with post method, request body still the same):
+1. API for get role
+* POST: 'api/user/get-role/for-post'
+2. API for get payment config
+* POST: 'api/paymentConfig/get/for-post'
+3. API for get notification config
+* POST: '/notificationConfig/get/for-post'
+4. API for get screen config
+* POST: 'api/user/get-screen-config/for-post'
+5. API for get product config
+* POST: 'api/productconfig/get/for-post'
+6. API for get login config
+* POST: 'api/loginconfig/get/for-post'
+7. API for get module switch
+* POST: 'api/moduleSwitch/get/for-post'
+
+## Request body format for API and data rules:
+https://docs.google.com/spreadsheets/d/1gWZ9ClgkRuQHVVNu-_zj28vho_sOtpSBev-_2IDf1j4/edit?fbclid=IwAR0CxzwStsGxJliCfIEoUN3kt7QZz6xJG_hQmW6VL-RsiLM5Qf9-fm82EFg#gid=0
 
 ## Database format
 /database/seeders

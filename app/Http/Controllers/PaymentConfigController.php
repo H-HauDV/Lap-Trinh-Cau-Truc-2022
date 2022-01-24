@@ -11,6 +11,10 @@ class PaymentConfigController extends Controller
         $paymentConfig = PaymentConfig::first();
         return $paymentConfig;
     }
+    public function GetPaymentControllerConfigForPost(Request $request){
+        $paymentConfig = PaymentConfig::first();
+        return $paymentConfig;
+    }
 
     public function SetPaymentControllerConfig(Request $request)
     {

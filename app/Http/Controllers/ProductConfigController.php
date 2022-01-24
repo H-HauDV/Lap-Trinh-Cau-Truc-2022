@@ -10,6 +10,10 @@ class ProductConfigController extends Controller
       $productConfig=ProductConfig::all();
       return $productConfig;
     }
+    public function GetProductConfigForPost(Request $request){
+      $productConfig=ProductConfig::all();
+      return $productConfig;
+    }
     public function SetProductConfigFromID(Request $request){
       $isExist=ProductConfig::where('id','=', $request->id)->first();
       if ($isExist != null) {

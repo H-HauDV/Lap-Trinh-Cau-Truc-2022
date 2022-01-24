@@ -10,6 +10,10 @@ class LoginConfigController extends Controller
       $LoginConfig=LoginConfig::all();
       return $LoginConfig;
     }
+    public function GetLoginConfigForPost(Request $request){
+      $LoginConfig=LoginConfig::all();
+      return $LoginConfig;
+    }
     public function SetLoginConfigFromID(Request $request){
       $isExist=LoginConfig::where('id','=', $request->id)->first();
         if ($isExist != null) {

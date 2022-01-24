@@ -13,6 +13,12 @@ class ScreenConfigController extends Controller
         if (count($user_screen) > 0) return response()->json(["theme" => $user_screen[0]->theme, "font-size" => $user_screen[0]->{"font-size"}, "language" => $user_screen[0]->language, "user_id" => $user_screen[0]->{"user_id"}]);
         return response()->json(['Error' =>  "User ID does not exist!"],  400);
     }
+    public function GetScreenConfigForPost(Request $request)
+    {
+        $user_screen = ScreenConfig::where('user_id', '=', $request->id)->get();
+        if (count($user_screen) > 0) return response()->json(["theme" => $user_screen[0]->theme, "font-size" => $user_screen[0]->{"font-size"}, "language" => $user_screen[0]->language, "user_id" => $user_screen[0]->{"user_id"}]);
+        return response()->json(['Error' =>  "User ID does not exist!"],  400);
+    }
     public function StoreScreenConfig(Request $request)
     {
         $isExist = ScreenConfig::where('user_id', '=', $request->{"user_id"})->first();

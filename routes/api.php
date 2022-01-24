@@ -23,25 +23,41 @@ use App\Http\Controllers\ModuleSwitchController;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-
+//User role
 Route::get('/user/get-role/from-id', [UserRoleController::class, 'GetUserRoleFromID']);
-Route::post('/user/get-role/for-post', [UserRoleController::class, 'GetUserRoleForPost']);
 Route::post('/user/set-role/for-id', [UserRoleController::class, 'StoreUserRole']);
 
+//Product config
 Route::get('/productconfig/get', [ProductConfigController::class, 'GetProductConfigFromID']);
 Route::post('/productconfig/set', [ProductConfigController::class, 'SetProductConfigFromID']);
 
+//Login config
 Route::get('/loginconfig/get', [LoginConfigController::class, 'GetLoginConfigFromID']);
 Route::post('/loginconfig/set', [LoginConfigController::class, 'SetLoginConfigFromID']);
 
+
+//Screen config
 Route::get('/user/get-screen-config/from-id', [ScreenConfigController::class, 'GetScreenConfigFromID']);
 Route::post('/user/set-screen-config/for-id', [ScreenConfigController::class, 'StoreScreenConfig']);
 
+//Payment config
 Route::get('/paymentConfig/get', [PaymentConfigController::class, 'GetPaymentControllerConfig']);
 Route::post('/paymentConfig/set', [PaymentConfigController::class, 'SetPaymentControllerConfig']);
 
+//Notification config
 Route::get('/notificationConfig/get', [NotificationConfigController::class, 'GetNotificationConfig']);
 Route::post('/notificationConfig/set', [NotificationConfigController::class, 'SetNotificationConfig']);
 
+//Module switch config
 Route::get('/moduleSwitch/get', [ModuleSwitchController::class, 'GetTeamCodeFromModule']);
 Route::post('/moduleSwitch/set', [ModuleSwitchController::class, 'SetTeamCodeForModule']);
+
+
+//For post method
+Route::post('/user/get-role/for-post', [UserRoleController::class, 'GetUserRoleForPost']); //User role
+Route::post('/productconfig/get/for-post', [ProductConfigController::class, 'GetProductConfigForPost']); //Product config
+Route::post('/loginconfig/get/for-post', [LoginConfigController::class, 'GetLoginConfigForPost']); //Login config
+Route::post('/user/get-screen-config/for-post', [ScreenConfigController::class, 'GetScreenConfigForPost']); //Screen config
+Route::post('/paymentConfig/get/for-post', [PaymentConfigController::class, 'GetPaymentControllerConfigForPost']); //Payment config
+Route::post('/notificationConfig/get/for-post', [NotificationConfigController::class, 'GetNotificationConfigForPost']); //Notification config
+Route::post('/moduleSwitch/get/for-post', [ModuleSwitchController::class, 'GetTeamCodeFromModuleForPost']); //Module switch config

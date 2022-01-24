@@ -11,6 +11,10 @@ class NotificationConfigController extends Controller
         $notificationConfig = NotificationConfig::first();
         return $notificationConfig;
     }
+    public function GetNotificationConfigForPost(Request $request){
+        $notificationConfig = NotificationConfig::first();
+        return $notificationConfig;
+    }
 
     public function SetNotificationConfig(Request $request)
     {

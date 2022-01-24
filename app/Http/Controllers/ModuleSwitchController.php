@@ -11,6 +11,11 @@ class ModuleSwitchController extends Controller
         if (count($module_switch) > 0) return response()->json([["team_code"=> $module_switch[0]->team_code], ["type"=> $module_switch[0]->type]],  200);
         return response()->json(['Error' =>  "Module does not exist!"],  400);
     }
+    public function GetTeamCodeFromModuleForPost(Request $request){
+        $module_switch = ModuleSwitch::where('module','=', $request->module)->get();
+        if (count($module_switch) > 0) return response()->json([["team_code"=> $module_switch[0]->team_code], ["type"=> $module_switch[0]->type]],  200);
+        return response()->json(['Error' =>  "Module does not exist!"],  400);
+    }
 
     // Sản phẩm: 0 (SP_11 và SP_17) OR
     // Giao hàng: 1 (SP_07 và SP_15) OR
