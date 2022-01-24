@@ -53,7 +53,7 @@ Route::get('/moduleSwitch/get', [ModuleSwitchController::class, 'GetTeamCodeFrom
 Route::post('/moduleSwitch/set', [ModuleSwitchController::class, 'SetTeamCodeForModule']);
 
 
-//For post method
+//API for get but with post method
 Route::post('/user/get-role/for-post', [UserRoleController::class, 'GetUserRoleForPost']); //User role
 Route::post('/productconfig/get/for-post', [ProductConfigController::class, 'GetProductConfigForPost']); //Product config
 Route::post('/loginconfig/get/for-post', [LoginConfigController::class, 'GetLoginConfigForPost']); //Login config
