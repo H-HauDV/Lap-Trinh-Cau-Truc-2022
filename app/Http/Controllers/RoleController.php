@@ -8,17 +8,17 @@ class RoleController extends Controller
 {
     public function GetRoleInfoFromID(Request $request){
         $Role = Role::where('id','=', $request->id)->get();
-        if (count($Role) > 0) return response()->json(["role"=> $Role[0]->definition],  200);
+        if (count($Role) > 0) return response()->json(["Role_id"=> $request->id, "Definition"=> $request->definition],  200);
         return response()->json(['Error' =>  "Role does not exist!"],  400);
     }
-    public function UpdateRoleWithId(Request $request)
+    public function UpdateRoleWithRoleId(Request $request)
     {
         $isExist=Role::where('id','=', $request->id)->first();
         if ($isExist != null) {
             $isExist->id = $request->id;
             $isExist->definition= $request->definition;
             $isExist->save();
-            return response()->json(["Message"=>"Role updated successfully", "User_id"=> $request->id, "role"=> $request->role],  200);
+            return response()->json(["Message"=>"Role updated successfully", "Role_id"=> $request->id, "Definition"=> $request->definition],  200);
         }
         return response()->json(['Error' =>  "Can not find that role!"],  400);
     }
@@ -30,7 +30,7 @@ class RoleController extends Controller
             $newRole->id = $request->id;
             $newRole->definition = $request->definition;
             $newRole->save();
-            return response()->json(["Message"=>"Role set successfully", "Role_id"=> $newRole->id, "definition"=> $newRole->definition],  200);
+            return response()->json(["Message"=>"Role set successfully", "Role_id"=> $newRole->id, "Definition"=> $newRole->definition],  200);
         }
         return response()->json(['Error' =>  "Role already exist!"],  400);
     }
