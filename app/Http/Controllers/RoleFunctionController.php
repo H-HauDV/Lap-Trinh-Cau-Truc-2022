@@ -9,7 +9,14 @@ class RoleFunctionController extends Controller
 {
     public function GetWhichFunctionThisRoleAllow(Request $request){
         $roleFunction = RoleFunction::where('roles', 'all', [ $request->role])->get();
-        return $roleFunction->function_id;
+        $functionArray = (array) null;
+        foreach ($roleFunction as $aRoleFunction) {
+            $tempFunctionArray = (array) null;
+            array_push($tempFunctionArray, $aRoleFunction->function_id); 
+            array_push($tempFunctionArray, $aRoleFunction->function_definition); 
+            array_push($functionArray, $tempFunctionArray); 
+        }
+        return $functionArray;
     }
     public function AddARoleToAFunction(Request $request)
     {
