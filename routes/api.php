@@ -35,6 +35,7 @@ Route::post('/role/add', [RoleController::class, 'AddRoleWithId']);
 //Function
 Route::get('/role-function/get-function', [RoleFunctionController::class, 'GetFunctionFormFunctionId']);
 Route::post('/role-function/store-function', [RoleFunctionController::class, 'StoreFunction']);
+
 //Function of role
 Route::get('/role-function/get', [RoleFunctionController::class, 'GetWhichFunctionThisRoleAllow']);
 Route::post('/role-function/set', [RoleFunctionController::class, 'AddARoleToAFunction']);
