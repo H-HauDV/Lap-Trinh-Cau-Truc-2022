@@ -33,6 +33,7 @@ Route::post('/role/update', [RoleController::class, 'UpdateRoleWithId']);
 Route::post('/role/add', [RoleController::class, 'AddRoleWithId']);
 
 //Function of role
+Route::get('/role-function/store-function', [RoleController::class, 'StoreFunction']);
 Route::get('/role-function/get', [RoleController::class, 'GetWhichFunctionThisRoleAllow']);
 Route::post('/role-function/set', [RoleController::class, 'AddARoleToAFunction']);
 Route::post('/role-function/remove', [RoleController::class, 'RemoveARoleFromAFunction']);
