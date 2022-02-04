@@ -59,5 +59,14 @@ class RoleFunctionController extends Controller
             
         }
     }
+    public function GetFunctionFormFunctionId(Request $request)
+    {
+        //To-do check format
+        $isFunctionExist = RoleFunction::where('function_id','=', $request->function_id)->first();
+        if ($isFunctionExist != null) { 
+            return response()->json(["Function_id"=> $isFunctionExist->function_id, "Function_definition"=> $isFunctionExist->function_definition],  200);
+        }
+        return response()->json(["Error"=> "Function id not match"],  200);
+    }
 
 }
