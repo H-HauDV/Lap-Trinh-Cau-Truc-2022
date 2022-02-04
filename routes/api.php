@@ -33,12 +33,12 @@ Route::post('/role/update', [RoleController::class, 'UpdateRoleWithId']);
 Route::post('/role/add', [RoleController::class, 'AddRoleWithId']);
 
 //Function
-Route::get('/role-function/get-function', [RoleController::class, 'GetFunctionFormFunctionId']);
-Route::post('/role-function/store-function', [RoleController::class, 'StoreFunction']);
+Route::get('/role-function/get-function', [RoleFunctionController::class, 'GetFunctionFormFunctionId']);
+Route::post('/role-function/store-function', [RoleFunctionController::class, 'StoreFunction']);
 //Function of role
-Route::get('/role-function/get', [RoleController::class, 'GetWhichFunctionThisRoleAllow']);
-Route::post('/role-function/set', [RoleController::class, 'AddARoleToAFunction']);
-Route::post('/role-function/remove', [RoleController::class, 'RemoveARoleFromAFunction']);
+Route::get('/role-function/get', [RoleFunctionController::class, 'GetWhichFunctionThisRoleAllow']);
+Route::post('/role-function/set', [RoleFunctionController::class, 'AddARoleToAFunction']);
+Route::post('/role-function/remove', [RoleFunctionController::class, 'RemoveARoleFromAFunction']);
 
 
 //User role
