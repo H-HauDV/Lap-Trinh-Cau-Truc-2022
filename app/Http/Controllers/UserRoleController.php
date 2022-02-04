@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\UserRole;
+use App\Models\Role;
 class UserRoleController extends Controller
 {
     public function GetUserRoleFromID(Request $request){
@@ -18,6 +19,11 @@ class UserRoleController extends Controller
     }
     public function StoreUserRole(Request $request)
     {
+        // Check if role exist in role table
+        $isRoleValid=Role::where('id','=', $request->role)->first();
+        if ($isRoleValid == null) {
+            return response()->json(["Error"=>"Cannot set role, role does not exist"],  400);
+        }
         $isExist=UserRole::where('id','=', $request->id)->first();
         if ($isExist != null) {
             $isExist->id = $request->id;

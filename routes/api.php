@@ -9,6 +9,8 @@ use App\Http\Controllers\PaymentConfigController;
 use App\Http\Controllers\NotificationConfigController;
 use App\Http\Controllers\LoginConfigController;
 use App\Http\Controllers\ModuleSwitchController;
+use App\Http\Controllers\RoleController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -23,6 +25,11 @@ use App\Http\Controllers\ModuleSwitchController;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+//Role definition
+Route::get('/role/get', [RoleController::class, 'GetRoleInfoFromID']);
+Route::post('/role/update', [RoleController::class, 'UpdateRoleWithId']);
+Route::post('/role/add', [RoleController::class, 'AddRoleWithId']);
+
 //User role
 Route::get('/user/get-role/from-id', [UserRoleController::class, 'GetUserRoleFromID']);
 Route::post('/user/set-role/for-id', [UserRoleController::class, 'StoreUserRole']);
