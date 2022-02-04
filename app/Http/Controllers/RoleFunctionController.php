@@ -45,7 +45,7 @@ class RoleFunctionController extends Controller
             $isFunctionExist->function_id = $request->function_id;
             $isFunctionExist->pull('roles', $request->role);
             $isFunctionExist->save();
-            return response()->json(["Message"=>"Function of role updated successfully", "Function"=> $isFunctionExist->function_definition, "role"=> $request->role],  200);
+            return response()->json(["Message"=>"Function of role updated successfully", "Function"=> $isFunctionExist->function_definition, "Role remove"=> $request->role],  200);
         }
     }
     public function StoreFunction(Request $request)
