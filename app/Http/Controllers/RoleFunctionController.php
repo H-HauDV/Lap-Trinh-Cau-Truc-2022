@@ -8,8 +8,8 @@ use App\Models\Role;
 class RoleFunctionController extends Controller
 {
     public function GetWhichFunctionThisRoleAllow(Request $request){
-        $roleFunction = RoleFunction::where('roles', 'all', [ $request->role])->get();
-        return $roleFunction ;
+        $roleFunction = RoleFunction::where('roles', 'all', [ $request->role])->get("function_id","function_definition");
+        return $roleFunction;
     }
     public function AddARoleToAFunction(Request $request)
     {
