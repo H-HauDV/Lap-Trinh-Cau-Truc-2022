@@ -10,6 +10,8 @@ use App\Http\Controllers\NotificationConfigController;
 use App\Http\Controllers\LoginConfigController;
 use App\Http\Controllers\ModuleSwitchController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\RoleFunctionController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +31,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/role/get', [RoleController::class, 'GetRoleInfoFromID']);
 Route::post('/role/update', [RoleController::class, 'UpdateRoleWithId']);
 Route::post('/role/add', [RoleController::class, 'AddRoleWithId']);
+
+//Function of role
+Route::get('/role-function/get', [RoleController::class, 'GetWhichFunctionThisRoleAllow']);
+Route::post('/role-function/set', [RoleController::class, 'AddARoleToAFunction']);
+Route::post('/role-function/remove', [RoleController::class, 'RemoveARoleFromAFunction']);
 
 //User role
 Route::get('/user/get-role/from-id', [UserRoleController::class, 'GetUserRoleFromID']);
