@@ -8,7 +8,7 @@ class RoleController extends Controller
 {
     public function GetRoleInfoFromID(Request $request){
         $Role = Role::where('id','=', $request->id)->first();
-        if ($Role!=null) return response()->json(["Role_id"=> $Role->id, "Definition"=> $Role->definition],  200);
+        if ($Role!=null) return response()->json(["Role Definition"=> $Role->definition],  200);
         return response()->json(['Error' =>  "Role does not exist!"],  400);
     }
     public function UpdateRoleWithRoleId(Request $request)
